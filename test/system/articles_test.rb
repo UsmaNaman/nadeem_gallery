@@ -6,12 +6,12 @@ class ArticlesTest < ApplicationSystemTestCase
   end
 
   test "visiting the index" do
-    visit articles_url
+    visit root_path
     assert_selector "h1", text: "Articles"
   end
 
   test "should create article" do
-    visit articles_url
+    visit root_path
     click_on "New article"
 
     fill_in "Body", with: @article.body
