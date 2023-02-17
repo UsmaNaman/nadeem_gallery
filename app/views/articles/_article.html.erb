@@ -1,4 +1,13 @@
 <div id="<%= dom_id article %>">
+
+  <% if article.photos.attached? %>
+    <p>
+      <% article.photos.each do |photo| %>
+        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
+    </p>
+  <% end %>
+
   <p>
     <strong>Title:</strong>
     <%= article.title %>
